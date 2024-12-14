@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from src.data_utils import load_data
 from src.models.normal_equation import get_prediction_linear_regression
 from src.models.gradient_descent import gradient_descent_multi_variable
-from src.metrics.metrics import mean_squared_error, mean_absolute_error
+from src.metrics import mean_squared_error, mean_absolute_error
 
 # Load data
 data_filepath = "data/housing_data.csv"
