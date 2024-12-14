@@ -15,7 +15,7 @@ y_pred_ne = get_prediction_linear_regression(X, y)
 # Train model using Gradient Descent
 lr = 1e-5
 epochs = 250
-bias_gd, weights_gd, loss_gd = gradient_descent_multi_variable(X, y, lr=lr, epochs=epochs)
+bias_gd, weights_gd, loss_gd = gradient_descent_multi_variable(X, y, lr=lr, number_of_epochs=epochs)
 y_pred_gd = X @ weights_gd + bias_gd
 
 # Evaluate models
