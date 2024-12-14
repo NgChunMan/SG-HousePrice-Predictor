@@ -23,4 +23,5 @@ def mean_absolute_error(y_true, y_pred):
 
     sum_of_absolute_values = np.sum(absolute_value)
     mean_absolute_error = sum_of_absolute_values / num_of_samples
+    
     return mean_absolute_error
