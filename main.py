@@ -10,7 +10,8 @@ data_filepath = "data/housing_data.csv"
 X, y = load_data(data_filepath)
 
 # Train model using Normal Equation
-y_pred_ne = get_prediction_linear_regression(X, y)
+area = X[:, 0].reshape((-1, 1))
+y_pred_ne = get_prediction_linear_regression(area, y)
 
 # Train model using Gradient Descent
 lr = 1e-5
@@ -40,8 +41,8 @@ plt.show()
 
 # Plot predictions
 plt.scatter(X[:, 0], y, label="True Data")
-plt.plot(X[:, 0], y_pred_ne, color="r", label="Normal Equation")
-plt.plot(X[:, 0], y_pred_gd, color="g", label="Gradient Descent")
+plt.plot(area, y_pred_ne, color="r", label="Normal Equation")
+plt.plot(area, y_pred_gd, color="g", label="Gradient Descent")
 plt.xlabel("Size (Square Meters)")
 plt.ylabel("Price (SGD)")
 plt.title("Housing Prices Prediction")
