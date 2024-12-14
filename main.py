@@ -1,26 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from src.data_utils import load_data
-from src.models.normal_equation import normal_equation
-from src.models.gradient_descent import gradient_descent
+from src.models.normal_equation import get_prediction_linear_regression
+from src.models.gradient_descent import gradient_descent_multi_variable
 from src.metrics.metrics import mean_squared_error, mean_absolute_error
 
 # Load data
 data_filepath = "data/housing_data.csv"
 X, y = load_data(data_filepath)
 
-# Add bias column to X
-X_with_bias = np.hstack([np.ones((X.shape[0], 1)), X])
-
 # Train model using Normal Equation
-weights_ne = normal_equation(X_with_bias, y)
-y_pred_ne = X_with_bias @ weights_ne
+y_pred_ne = get_prediction_linear_regression(X, y)
 
 # Train model using Gradient Descent
-lr = 0.01
-epochs = 1000
-weights_gd, losses_gd = gradient_descent(X_with_bias, y, lr=lr, epochs=epochs)
-y_pred_gd = X_with_bias @ weights_gd
+lr = 1e-5
+epochs = 250
+bias_gd, weights_gd, loss_gd = gradient_descent_multi_variable(X, y, lr=lr, epochs=epochs)
+y_pred_gd = X @ weights_gd + bias_gd
 
 # Evaluate models
 mse_ne = mean_squared_error(y, y_pred_ne)
@@ -35,7 +31,7 @@ print("Gradient Descent:")
 print(f"  MSE: {mse_gd:.4f}, MAE: {mae_gd:.4f}")
 
 # Plot losses for Gradient Descent
-plt.plot(range(len(losses_gd)), losses_gd, label="Gradient Descent Loss")
+plt.plot(range(len(loss_gd)), loss_gd, label="Gradient Descent Loss")
 plt.xlabel("Epochs")
 plt.ylabel("Loss (MSE)")
 plt.title("Gradient Descent Loss Over Epochs")
