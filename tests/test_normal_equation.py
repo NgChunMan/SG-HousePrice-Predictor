@@ -1,5 +1,5 @@
 import numpy as np
-from src.linear_regression import add_bias_column, get_bias_and_weight, get_prediction_linear_regression
+from src.models.normal_equation import add_bias_column, get_bias_and_weight, get_prediction_linear_regression
 from src.metrics import mean_squared_error
 
 def test_add_bias_column():
