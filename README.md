@@ -24,20 +24,28 @@ The dataset housing_data.csv consists of 90 housing data points. Each data point
 
 ## Getting Started
 1. Clone the repository:
+```
 git clone https://github.com/your-username/Housing-Prices-Prediction.git
 cd Housing-Prices-Prediction
+```
 
 2. Install dependencies using pip:
+```
 pip install -r requirements.txt
+```
 
 3. Run the main script:
+```
 python main.py
+```
 
 4. The output will display the model results.
 
 ## Testing
 Unit tests are provided to validate the implementation of the gradient descent algorithm and other utilities. Run the tests using pytest:
+```
 pytest tests/
+```
 
 ## Results
 A sample plot using floor_area_sqm as the only feature comparing the actual housing prices with model predictions:
