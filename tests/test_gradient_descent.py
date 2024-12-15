@@ -1,4 +1,4 @@
-from src.gradient_descent import gradient_descent_multi_variable
+from src.models.gradient_descent import gradient_descent_multi_variable
 from src.data_utils import load_data
 
 def test_gradient_descent_multi_variable():
