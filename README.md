@@ -26,7 +26,7 @@ The dataset housing_data.csv consists of 90 housing data points. Each data point
 1. Clone the repository:
 ```
 git clone https://github.com/your-username/Housing-Prices-Prediction.git
-cd Housing-Prices-Prediction
+cd SG-HousePrice-Predictor
 ```
 
 2. Install dependencies using pip:
