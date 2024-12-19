@@ -7,7 +7,7 @@ This project predicts housing prices in Singapore using **Linear Regression**. T
 The project provides step-by-step implementation of linear regression algorithms, including data preprocessing, model training, and evaluation metrics such as Mean Squared Error (MSE) and Mean Absolute Error (MAE).
 
 ## Dataset
-The dataset housing_data.csv consists of 90 housing data points. Each data point includes:
+The dataset `housing_data.csv` consists of 90 housing data points. Each data point includes:
 - floor_area_sqm - The size of the house in square meters (used as the primary feature for prediction).
 - bedrooms - Number of bedrooms in the house.
 - schools - Number of primary schools within a 1 km radius.
@@ -48,8 +48,5 @@ pytest tests/
 ```
 
 ## Results
-A sample plot using floor_area_sqm as the only feature comparing the actual housing prices with model predictions:
-
-Blue points represent the actual data.
-Red line represents predictions using the Normal Equation.
-Green line represents predictions using Gradient Descent.
+A sample plot using floor_area_sqm as the only feature comparing the actual housing prices with model predictions.
+Blue points represent the actual data. Red line represents predictions using the Normal Equation. Green line represents predictions using Gradient Descent.
